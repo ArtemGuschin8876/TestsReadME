@@ -19,13 +19,13 @@
   * ("Автоматизация тестирования")
 ---
 ### __1. Открыть страницу.__
-````
+````java
  public void openPage() {    
         open("/");
     }
 ````
 _Так как у нас уже есть URL страницы Google в классе конфигурации, вместо ссылки в методе "open()", вставляется "/"._
-````
+````java
   @BeforeAll
     static void setUp(){
      Configuration.baseUrl = 
@@ -37,7 +37,7 @@ _От класса конфигурации, наследуется гланый
 ---
 ### __2.Ввести в строку поиска значение:__
 ("Автоматизация тестирования").
-```
+```java
 public void setValueInSearchField(String value) {
         $(SEARCH_FIELD).setValue(value).pressEnter();
     }
@@ -45,7 +45,7 @@ public void setValueInSearchField(String value) {
 ---
 ### __3.Проверить что страница появилась__
 _Шаги с 3, 3.1 и 3.2 включительно выполняются в одном методе._
-````
+````java
 public void openTheFirstLink(String value) {
         $(RESULT_PAGE).shouldBe(Condition.visible);
         $(RESULT_PAGE).shouldHave(Condition.text(value));
@@ -56,7 +56,7 @@ public void openTheFirstLink(String value) {
 
 ### __4.Проверить что заголовок открытой страницы соответствует:__
 (" Автоматизация тестирования DevOps | Atlassian ")
-````
+````java
 public void checkThePageTitle(String titlePage) {
         
         $("title").shouldHave(Condition.attribute("text", titlePage));
@@ -64,7 +64,7 @@ public void checkThePageTitle(String titlePage) {
 ````
 ---
 ### __5.Возвращаемся обатно на страницу Google.__
-````
+````java
 public void back() {
         Selenide.back();
     }
@@ -72,7 +72,7 @@ public void back() {
 ---
 ### __6.Проверяем что в поле поиска остался наш запрос:__
 ("Автоматизация тестирования")
-````
+````java
 public void checkTheOldQueryInTheSearchField(String value) {
         $(SEARCH_FIELD).shouldHave(Condition.value(value));
     }
@@ -81,7 +81,7 @@ public void checkTheOldQueryInTheSearchField(String value) {
 
 ## __И демонстрация всего теста в главном тестовом классе:__
 #### _Уже после рефакторинга._
-````
+````java
    @Test
     public void testSearchGoogle() {
         googlePage.openPage();
