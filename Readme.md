@@ -1,4 +1,4 @@
----
+
 # __Тренировка создания Readme файла, на примере простого теста.__
 
 ### __Простой автотест на поиск в Google.__
@@ -45,13 +45,13 @@ public void setValueInSearchField(String value) {
 ---
 ### __3.Проверить что страница появилась__
 _Шаги с 3, 3.1 и 3.2 включительно выполняются в одном методе._
-```java
-public void openTheFirstLink (String value) {
+````java
+public void openTheFirstLink(String value) {
         $(RESULT_PAGE).shouldBe(Condition.visible);
         $(RESULT_PAGE).shouldHave(Condition.text(value));
         $$(".g").first().$("a").click();
     }
-```
+````
 ---
 
 ### __4.Проверить что заголовок открытой страницы соответствует:__
@@ -107,9 +107,4 @@ public void checkTheOldQueryInTheSearchField(String value) {
 ---
 Это был мой первый опыт создания Readme файла для GitHub.
 В последующих репозиториях я постараюсь и дальше постигать синтаксис "Markdown".
-
-
-
-
-
 
