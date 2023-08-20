@@ -3,13 +3,11 @@ package testgooglesearch;
 import org.junit.jupiter.api.Test;
 
 public class GoogleSearchTest extends BaseTest {
-    private static final String VALUE = "автоматизация тестирования";
+    private static final String VALUE = "Автоматизация тестирования";
     private static final String TITLE_PAGE = " Автоматизация тестирования DevOps | Atlassian ";
 
 
     GooglePage googlePage = new GooglePage();
-
-
     @Test
     public void testSearchGoogle() {
         googlePage.openPage();
